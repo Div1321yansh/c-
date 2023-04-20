@@ -1,0 +1,50 @@
+#include <bits/stdc++.h> 
+pair<int, int> firstAndLastPosition(vector<int>& arr, int n, int k)
+{
+    pair<int,int>p;
+    int start=0,p1,p2,j,i,count=0,flag=0;      // code by binary search made by me with nomral approach
+    int end=n-1;
+    int middle=start + (end-start)/2;
+    while(start<=end)
+    {
+        if(arr[middle]==k)
+        {
+            p1=middle;
+            for(i=middle;i<n;i++)
+            {
+                if(arr[i]!=arr[i+1])
+                {
+                    break;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+            for(j=middle;j>0;j--)
+            {
+                if(arr[j]!=arr[j-1])
+                {
+                    break;
+                }
+                else
+                {
+                    flag++;
+                }
+            }
+            p={p1-flag,p1+count};
+            return p;
+        }
+        else if(k>arr[middle])
+        {
+            start=middle+1;
+        }
+        else
+        {
+            end=middle-1;
+        }
+        middle=start + (end-start)/2;
+    }
+    p={-1,-1};
+    return p;
+}
