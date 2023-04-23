@@ -1,0 +1,22 @@
+
+//FUNCTION WITH LOGIC FOR IT
+
+class Solution{
+    public:
+    int firstElementKTime(int a[], int n, int k)
+    {
+        int i=0,j=0;
+        int hash[1000000]={0};
+        int first=0;
+        for(i=0;i<n;i++)
+        {
+            hash[a[i]]++;
+            if(hash[a[i]]==k)
+            {
+                first=a[i];
+                return a[i];
+            }
+        }
+        return -1;
+    }
+};
