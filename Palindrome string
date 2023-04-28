@@ -1,0 +1,23 @@
+Given a string S, check if it is palindrome or not.
+
+Example 1:
+
+Input: S = "abba"
+Output: 1
+Explanation: S is a palindrome
+
+//// CODE -------------------------
+
+
+class Solution{
+public:	
+	
+	
+	int isPalindrome(string S)
+	{
+	    // Your code goes here
+	   string s(S.rbegin(),S.rend());
+        return(S == s);
+	}
+
+};
