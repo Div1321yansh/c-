@@ -1,0 +1,28 @@
+Given a non-empty sequence of characters str, return true if sequence is Binary, else return false
+
+Example 1:
+
+Input:
+str = 101
+Output:
+1
+Explanation:
+Since string contains only 0 and 1, output is 1.
+
+
+////CODE-----------------------------------------------------------------------
+
+bool isBinary(string str)
+{
+   // Your code here
+   int i=0;
+   while(str[i]!='\0')
+   {
+       if(str[i]!='1' && str[i]!='0')
+       {
+           return 0;
+       }
+       i++;
+   }
+   return 1;
+}
