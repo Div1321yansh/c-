@@ -1,0 +1,42 @@
+Given an array arr[] of positive integers of size N. Reverse every sub-array group of size K.
+
+Note: If at any instance, there are no more subarrays of size greater than or equal to K, then reverse the last subarray (irrespective of its size). You shouldn't return any array, modify the given array in-place.
+
+Example 1:
+
+Input:
+N = 5, K = 3
+arr[] = {1,2,3,4,5}
+Output: 3 2 1 5 4
+Explanation: First group consists of elements
+1, 2, 3. Second group consists OF 4 and 5
+
+/////CODE-----------------------------------------------------------------
+
+
+class Solution{
+public:
+    //Function to reverse every sub-array group of size k.
+    void reverseInGroups(vector<long long>& arr, int n, int k){
+        int num=n/k;
+        for(int i=0;i<num;i++)
+        {
+            int j=i*k;
+            int y=(i+1)*k;
+            while(j<y-1)
+            {
+                swap(arr[j],arr[y-1]);
+                j++;
+                y--;
+            }
+        }
+        int left=num*k;
+        int last=n-1;
+        while(left<last)
+        {
+            swap(arr[left],arr[last]);
+            left++;
+            last--;
+        }
+    }
+};
