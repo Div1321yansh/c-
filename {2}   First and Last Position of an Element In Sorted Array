@@ -1,0 +1,48 @@
+Given a sorted array having N elements, find the indices of the first and last occurrences of an element X in the given array.
+
+Note: If the number X is not found in the array, return '-1' as an array.
+
+Example 1:
+
+Input:
+N = 4 , X = 3
+arr[] = { 1, 3, 3, 4 }
+Output:
+1 2
+Explanation:
+For the above array, first occurence
+of X = 3 is at index = 1 and last
+occurence is at index = 2.
+
+
+////CODE--------------------------------------------------------------------------------
+
+
+
+vector<int> firstAndLast(vector<int> &arr, int n, int x) {
+        // Code here
+        int s=0;
+        int e=n-1;
+        vector<int>ans;
+        while(s<=e)
+        {
+            if(arr[s]!=x)
+            {
+                s++;
+            }
+            else if(arr[e]!=x)
+            {
+                e--;
+            }
+            else if(s<=e && arr[s]==x && arr[e]==x)
+            {
+                ans.push_back(s);
+                ans.push_back(e);
+                return ans;
+            }
+        }
+        vector<int>ans1;
+        ans1.push_back(-1);
+        return ans1;
+    }
+};
