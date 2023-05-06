@@ -1,0 +1,43 @@
+Two arrays of size N are called identical arrays if they contain the same elements. The order of elements in both arrays could be different; however, both the arrays must contain same elements. You are given two arrays of size N.
+
+You need to determine if the arrays are identical or not.
+
+Example 1:
+ 
+
+Input : A[] = {1, 2, 3, 4, 5}, B[] = {3, 4, 1, 2, 5}
+Output : 1
+Explanation:
+Here we can see array A[] = [1, 2, 3, 4, 5] and 
+B[] = [3, 4, 1, 2, 5]. If we look both the array then we 
+can get that array B is the permutation of A. So, both array
+are identical. 
+
+
+
+///CODE-----------------------------------------------------------------------------------------
+
+
+
+int check(int *a, int *b, int n){
+    // Complete the function
+    int result=1;
+    int hash[10000]={0};
+    int hash1[10000]={0};
+    for(int i=0;i<n;i++)
+    {
+        hash[a[i]]++;
+    }
+    for(int i=0;i<n;i++)
+    {
+        hash1[b[i]]++;
+    }
+    for(int i=0;i<n;i++)
+    {
+       if(hash[a[i]]!=hash1[a[i]])
+       {
+           result=0;
+       }
+    }
+    return result;
+}
