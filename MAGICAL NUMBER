@@ -1,0 +1,42 @@
+Your friend loves magic and he has coined a new term - "Magical number". To perform his magic, he needs that Magic number. 
+There are N number of people in the magic show, seated according to their ages in ascending order. 
+A magical number is that seat no. where the person has the same age as that of the given seat number.
+Help your friend in finding out that "Magical number".
+Note: If there are multiple magical numbers in the array, return the any one valid value.
+
+Example:
+
+Input:
+1
+10
+-10 -1 0 3 10 11 30 50 100 150
+
+Output:
+3
+
+
+////CODE=---------------------------------------------------------------------------------------------------
+
+
+int binarySearch(int arr[], int low, int high)
+{
+      //add code here.
+      int middle=low + (high-low)/2;
+      while(low<=high)
+      {
+          if(arr[middle]==middle)
+          {
+              return middle;
+          }
+          else if(arr[middle]>middle)
+          {
+              high=middle-1;
+          }
+          else 
+          {
+              low=middle+1;
+          }
+          middle=low + (high-low)/2;
+      }
+      return -1;
+}
