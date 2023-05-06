@@ -21,23 +21,12 @@ are identical.
 
 int check(int *a, int *b, int n){
     // Complete the function
-    int result=1;
-    int hash[10000]={0};
-    int hash1[10000]={0};
+    sort(a,a+n);
+    sort(b,b+n);
     for(int i=0;i<n;i++)
     {
-        hash[a[i]]++;
+        if(a[i]!=b[i])
+        return 0;
     }
-    for(int i=0;i<n;i++)
-    {
-        hash1[b[i]]++;
-    }
-    for(int i=0;i<n;i++)
-    {
-       if(hash[a[i]]!=hash1[a[i]])
-       {
-           result=0;
-       }
-    }
-    return result;
+    return 1;
 }
