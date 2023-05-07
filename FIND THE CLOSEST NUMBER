@@ -1,0 +1,57 @@
+Given an array of sorted integers. The task is to find the closest value to the given number in array. Array may contain duplicate values.
+
+Note: If the difference is same for two values print the value which is greater than the given number.
+
+Example 1:
+
+Input : Arr[] = {1, 3, 6, 7} and K = 4
+Output : 3
+Explanation:
+We have an array [1, 3, 6, 7] and target is 4.
+If we look at the absolute difference of target 
+with every element of an array we will 
+get [ |1-4|, |3-4|, |6-4|, |7-4| ]. 
+So, the closest number is 3.
+
+
+
+///CODE-------------------------------------------------------------------------------------
+
+
+class Solution{
+    public:
+    int findClosest(int arr[], int n, int target) 
+    { 
+        // Complete the function
+        int start=0;
+        int end=n-1;
+        int middle=start + (end-start)/2;
+        int diff;
+        int min=INT_MAX;
+        int num;
+        while(start<=end)
+        {
+            diff=target-arr[middle];
+            if(diff==0)
+            {
+                return arr[middle];
+            }
+            else if(diff<0)
+            {
+                end=middle-1;
+            }
+            else
+            {
+                start=middle+1;
+            }
+            if(abs(diff)<min || (abs(diff)==min)&& diff<0)
+            {
+                min=abs(diff);
+                num=arr[middle];
+            }
+            middle=start + (end-start)/2;
+        }
+        return num;
+            
+    } 
+};
