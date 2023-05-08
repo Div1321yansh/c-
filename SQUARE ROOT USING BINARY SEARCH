@@ -1,0 +1,45 @@
+Given an integer x, find the square root of x. If x is not a perfect square, then return floor(√x).
+
+ 
+
+Example 1:
+
+Input:
+x = 5
+Output: 2
+Explanation: Since, 5 is not a perfect 
+square, floor of square_root of 5 is 2
+
+
+
+//////CODE---------------------------------------------------------------------------
+
+
+
+class Solution{
+  public:
+    long long int floorSqrt(long long int x) 
+    {
+        // Your code goes here  
+        long long int s=0,e=x,m,ans;
+        m= s + (e-s)/2;
+        while(s<=e)
+        {
+            if(m*m==x)
+            {
+                return m;
+            }
+            else if(m*m>x)
+            {
+                e=m-1;
+            }
+            else
+            {
+                ans=m;
+                s=m+1;
+            }
+            m= s + (e-s)/2;
+        }
+        return ans;
+    }
+};
