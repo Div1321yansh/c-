@@ -1,0 +1,59 @@
+Given a sorted array arr[] of size N without duplicates, and given a value x. Floor of x is defined as the largest element K in arr[] such that K is smaller than or equal to x. Find the index of K(0-based indexing).
+
+Example 1:
+
+Input:
+N = 7, x = 0 
+arr[] = {1,2,8,10,11,12,19}
+Output: -1
+Explanation: No element less 
+than 0 is found. So output 
+is "-1".
+
+
+
+///////CODE=====-------------------------------------------------------------------------------------
+
+
+
+class Solution{
+  public:
+    // Function to find floor of x
+    // n: size of vector
+    // x: element whose floor is to find
+    int findFloor(vector<long long> v, long long n, long long x){
+        
+        // Your code here
+        long long int s,e,m;
+        int ans=-1;
+        s=0;
+        e=n-1;
+        m=s + (e-s)/2;
+        if(v[0]>x)
+        {
+            return ans;
+        }
+        else
+        {
+            while(s<=e)
+            {
+                if(v[m]==x)
+                {
+                    return m;
+                }
+                else if(v[m]>x)
+                {
+                    e=m-1;
+                }
+                else
+                {
+                    ans=m;
+                    s=m+1;
+                }
+                m=s + (e-s)/2;
+            }
+            return ans;
+        }
+        
+    }
+};
