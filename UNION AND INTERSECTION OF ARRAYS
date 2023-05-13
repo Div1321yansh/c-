@@ -1,0 +1,57 @@
+#include<stdio.h>   //union and intersection of two arrays 
+int main()
+{
+    int n,i,j,m,common,check=0;
+    printf("ENtr the size of array A  : \n");
+    scanf("%d",&n);
+    printf("\nENter the size of array b :  \n");
+    scanf("%d",&m);
+    int a[n],b[m];
+
+    printf("\nEnter the elements in array A :  \n");
+    for(i=0;i<n;i++)
+    {
+        printf("Index number %d : ",i);
+        scanf("%d",&a[i]);
+    }
+
+    printf("\nEnter the size of Array  B :  \n");
+    for(i=0;i<m;i++)
+    {
+        printf("Index number %d :  ",i);
+        scanf("%d",&b[i]);
+    }
+
+    printf("\nintersection of both array is : ");
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(a[i]==b[j])
+            {
+                printf("%d",a[i]);
+            }
+        }
+    }
+
+    printf("\nUnion of both array is : ");
+    for(i=0;i<m;i++)
+    {
+        printf(" %d,",b[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<m;j++)
+        {
+            if(a[i]==b[j])
+            {
+                check=1;
+            }
+        }
+        if(check==0)
+        {
+            printf(" %d,",a[i]);
+        }
+    }
+return 0;
+}
