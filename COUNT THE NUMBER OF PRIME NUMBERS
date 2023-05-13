@@ -1,0 +1,39 @@
+/*
+32.	Write a program to count how many prime numbers are present in an array
+*/
+#include<stdio.h>
+int main()
+{
+    int n,i,j,check=0,count=0;
+    printf("Enter the size of array :  \n");
+    scanf("%d",&n);
+    int a[n];
+    printf("\nEnter the elements :  \n");
+    for(i=0;i<n;i++)
+    { 
+        printf("Index number %d  :  ",i);
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==0 || a[i]==1)
+        {
+            continue;
+        }
+        for(j=2;j<a[i];j++)
+        {
+            if(a[i]%j==0)
+            {
+                check++;
+                break;
+            }
+        }
+        if(check==0)
+        {
+            count++;
+        }
+    }
+    printf("\nThe array has %d prime elements",count);
+
+return 0;
+}
