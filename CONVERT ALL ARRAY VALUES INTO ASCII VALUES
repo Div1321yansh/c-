@@ -1,0 +1,25 @@
+/*
+18.	WAP to convert all characters of an array into its equivalent ASCII value.
+Example:     Input-ABC          Output- 65 66 67
+*/
+#include<stdio.h>
+int main()
+{
+    int n,i,j;
+    printf("Enter the size of array is :  \n");
+    scanf("%d",&n);
+    char str_a[n];
+    printf("\n\nEnter the characters :  \n\n");
+    for(i=0;i<n;i++)
+    {
+        printf("Index number %d :  ",i);
+        scanf("%s",&str_a[i]);
+    }
+    printf("\n\nASCII value of all characters is :  \n\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%c  =  %d",str_a[i],str_a[i]);
+        printf("\n");
+    }
+return 0;
+}
