@@ -1,0 +1,50 @@
+/*
+35.	Write a program to replace zero’s in a matrix with multiples of a given n
+*/
+#include<stdio.h>
+int main()
+{
+    int r,c,i,j,num,count=1;
+    printf("ENter the numbe rif rows :  \n");
+    scanf("%d",&r);
+    printf("\nEnter the numbr of column:  \n");
+    scanf("%d",&c);
+    printf("\nEnter the number :  \n");
+    scanf("%d",&num);
+    int matrix[r][c];
+    printf("\nEnter the elements :  \n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("index number %d,%d :  ",i,j);
+            scanf("%d",&matrix[i][j]);
+        }
+    }
+
+    printf("Matirx of order %d*%d is :  \n",r,c);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d\t",matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nNew matrtix is :  \n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            if(matrix[i][j]==0)
+            {
+                matrix[i][j]=count*num;
+                count++;
+            }
+            printf("%d\t",matrix[i][j]);
+        }
+        printf("\n");
+    }
+return 0;
+}
