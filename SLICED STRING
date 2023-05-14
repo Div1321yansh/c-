@@ -1,0 +1,29 @@
+#include<stdio.h>   // return a sliced dtring from the original string
+#include<string.h>
+void slice(char arr[],int a,int b);
+int main()
+{
+    char Original_str[100];
+    printf("Enter the original string:  \n");
+    fgets(Original_str,100,stdin);
+    int n,m;
+    printf("Enter the ist index:  \n");
+    scanf("%d",&n);
+    printf("\n");
+    printf("Enter the second index:  \n");
+    scanf("%d",&m);
+    slice(Original_str,n,m);
+return 0;
+}
+
+void slice(char arr[],int a,int b)
+{ 
+    char sliced[100];
+    for(int i=a,j=0;i<=b,j<=b-a;i++,j++)
+    {
+       sliced[j]=arr[i];
+    }
+    sliced[b-a+1]='\0';
+    printf("The sliced string is :   \n");
+    puts(sliced);
+}
