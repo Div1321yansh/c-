@@ -1,0 +1,46 @@
+/* program to reverse the elements accouding to user specified position 
+*/
+#include<stdio.h>
+int main()
+{
+    int n,i,reverse_number,temp_1,temp_2;
+    printf("ENter the size of array :  \n");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter the elements :  \n");
+    for(i=0;i<n;i++)
+    {
+        printf("index number %d :  ",i);
+        scanf("%d",&a[i]);
+    }
+    printf("\nthe arrray is :  ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+        if(i==n-1)
+        {
+            continue;
+        }
+        printf(",");
+    }
+    printf("Enter the elements you want to reverse :  \n");
+    scanf("%d",&reverse_number);
+    for(i=0;i<reverse_number-1;i++)
+    {
+        temp_1=a[i];
+        temp_2=a[reverse_number-1];
+        a[i]=temp_2;
+        a[reverse_number-1]=temp_1;
+    }
+    printf("\n\nthe reversed array is :  ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+        if(i==n-1)
+        {
+            continue;
+        }
+        printf(",");
+    }
+return 0;
+}
