@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,temp_1,temp_2;
+    printf("ENter the size of array :  \n");
+    scanf("%d",&n);
+    int array[n];
+    printf("Emnter the elements:  \n");
+    for(i=0;i<n;i++)
+    {
+        printf("Index number %d :   ",i);
+        scanf("%d",&array[i]);
+    }
+    printf("the elements in array are :  ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d",array[i]);
+        if(i==n-1)
+        {
+            continue;
+        }
+        printf(",");
+    }
+    for(i=0;i<n;i=i+2)
+    {
+        if(n%2!=0 && i==n-1)
+        {
+            continue;
+        }
+        temp_1=array[i];
+        temp_2=array[i+1];
+        array[i]=temp_2;
+        array[i+1]=temp_1;
+    }
+    printf("\n\n");
+    printf("array with adjacant elements are :  ");
+    for(i=0;i<n;i++)
+    {
+        printf("%d",array[i]);
+        if(i==n-1)
+        {
+            continue;
+        }
+        printf(",");
+    }
+return 0;
+}
