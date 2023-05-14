@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+void Print_substring(char arr[],int pos,int length_substr);
+int main()
+{
+    int position,length_of_substring;
+    char Original_str[50];
+    printf("Enter the string :  ");
+    gets(Original_str);
+    printf("Enter the starting position of string:  \n");
+    scanf("%d",&position);
+    printf("Enter the length of substring:  \n");
+    scanf("%d",&length_of_substring);
+    Print_substring(Original_str,position,length_of_substring);
+return 0;
+}
+void Print_substring(char arr[],int pos,int len_substr)
+{
+    char substring_str[50];
+    int i,j;
+    for(i=pos,j=0;i<=pos+len_substr,j<len_substr;i++,j++)
+    {
+        substring_str[j]=arr[i];
+    }
+    substring_str[len_substr]='\0';
+    puts(substring_str);
+}
