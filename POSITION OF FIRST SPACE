@@ -1,0 +1,31 @@
+/*
+Design a UDF that takes a single string as its argument and returns the position of 
+occurrence of first ‘blank space’ character in the string. Draw a flowchart and write a C 
+program to accept the string in the main program and display the position returned to 
+console.
+*/
+
+#include<stdio.h>
+#include<string.h>
+int Blank_Space_pos(char arr[]);
+int main()
+{
+    char Primary_str[100];
+    printf("Enter the string :  ");
+    gets(Primary_str);
+    printf("\n%d is the position of first blank space",Blank_Space_pos(Primary_str));
+return 0;
+}
+int Blank_Space_pos(char arr[])
+{
+    int len=strlen(arr),i,pos;
+    for(i=0;i<len;i++)
+    {
+        if(arr[i]==' ')
+        {
+            pos=i+1;
+            break;
+        }
+    }
+    return pos;
+}
