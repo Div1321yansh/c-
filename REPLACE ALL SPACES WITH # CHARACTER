@@ -1,0 +1,30 @@
+/*2. Write a C program to accept a string from the user and replace all the occurrences of space(s) with
+a # character. Display the modified string to the console. Implement using a UDF.
+Sample Input: The pen is mightier than the sword.
+Output: The#pen#is#mightier#than#the#sword
+*/
+
+#include<stdio.h>
+#include<string.h>
+void hash(char *arr)
+{
+    int i;
+    for(i=0;*(arr+i)!='\0';i++)
+    {
+        if(*(arr+i)==' ')
+        {
+            *(arr+i)='#';
+        }
+    }
+}
+int main()
+{
+    char str[30];
+    printf("Enter the string:  \n");
+    fgets(str,30,stdin);
+    puts(str);
+    hash(str);
+    puts(str);
+
+return 0;
+}
