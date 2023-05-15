@@ -1,0 +1,43 @@
+/*3. Write a C program to accept a string from the user. Implement a UDF to display the frequency of
+vowels and spaces present in it to the console. Ignore the case.
+Sample Input: Necessity is the mother of invention
+Output: Frequency of vowels: 12 Frequency of spaces: 5
+*/
+
+#include<stdio.h>
+#include<string.h>
+int vowel(char arr[])
+{
+    int countv=0;
+    for(int i=0;arr[i]!='\0';i++)
+    {
+        if(arr[i]=='A' || arr[i]=='a' || arr[i]=='e' || arr[i]=='E' || arr[i]=='i' || arr[i]=='I'||
+           arr[i]=='o' || arr[i]=='O' || arr[i]=='u' || arr[i]=='U')
+           {
+            countv++;
+           }
+    }    
+    return countv;
+}
+
+int space(char arr[])
+{
+    int count_space=0,i;
+    for(i=0;arr[i]!='\0';i++)
+    {
+        if(arr[i]==' ')
+        {
+            count_space++;
+        }
+    }
+    return count_space;
+}
+int main()
+{
+    char sentence[50];
+    printf("Enter the sentence:  ");
+    fgets(sentence,50,stdin);
+    printf("ferquency of vowels is :  %d ",vowel(sentence));
+    printf("\nfrequency of space is :  %d",space(sentence));
+return 0;
+}
