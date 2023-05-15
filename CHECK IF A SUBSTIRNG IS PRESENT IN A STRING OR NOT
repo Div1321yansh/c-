@@ -1,0 +1,43 @@
+
+#include<stdio.h>  
+#include<string.h>
+int substrend(char arr[],char arr1[])
+{
+    int i,j,count=0;
+    int len=strlen(arr),len1=strlen(arr1);
+    for(i=len-1,j=len1-1;i>=len-len1,j>=0;i--,j--)
+    {
+        if(arr[i]==arr1[j])
+        {
+            count++;
+        }
+        else
+        {
+            return 0;
+            break;
+        }
+    }
+    if(count==len1)
+    {
+        return 1;
+    }
+}
+int main()
+{
+    char str[30];
+    printf("Enter the string: ");
+    gets(str);
+    char substr[30];
+    printf("Enter the string:  ");
+    gets(substr);
+    int ans=substrend(str,substr);
+    if(ans==0)
+    {
+        printf("\nThe substring is not presnet at the end");
+    }
+    else
+    {
+        printf("\nthe substring is  present at the emd");
+    }
+return 0;
+}
