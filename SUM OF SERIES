@@ -1,0 +1,25 @@
+Write a program to find the sum of the given series 1+2+3+ . . . . . .(N terms) 
+
+Example 1:
+
+Input:
+N = 1
+Output: 1
+Explanation: For n = 1, sum will be 1.
+
+
+/////CODE----------------------------------------------------------------------------------------------
+
+
+
+class Solution{
+public:
+	// function to return sum of  1, 2, ... n
+	long long seriesSum(int n) {
+	    // code here
+	    long long int sum=0;
+	    int num=n;
+	    sum=(num*(num+1))/2;
+	    return sum;
+	}
+};
