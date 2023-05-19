@@ -1,0 +1,40 @@
+You are provided an array 
+ of size 
+ that contains non-negative integers. Your task is to determine whether the number that is formed by selecting the last digit of all the N numbers is divisible by 
+.
+
+Note: View the sample explanation section for more clarification.
+
+
+Sample Input
+5
+85 25 65 21 84
+Sample Output
+No
+
+
+
+//////code------------------------------------------------------------------
+
+
+#include<stdio.h>
+int main()
+{
+	int n,i,digit,number=0;
+	scanf("%d",&n);
+	int a[n];
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	digit=a[n-1]%10;
+	if(digit!=0)
+	{
+		printf("No");
+	}
+	else
+	{
+		printf("Yes");
+	}
+	return 0;
+}
