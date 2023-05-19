@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+
+typedef struct vector
+{
+    int x;
+    int y;
+} vec;
+int main()
+{
+    struct vector arr[2];
+    printf("Enter the first vector :  \n");
+    printf("Enter the x for first vector :  ");
+    scanf("%d",&arr[0].x);
+    printf("Enter the y for first vector:  ");
+    scanf("%d",&arr[0].y);
+    printf("Enter the x for second factor :  ");
+    scanf("%d",&arr[1].x);
+    printf("Enter the y for the secomd vector :  ");
+    scanf("%d",&arr[1].y);
+    struct vector sum;
+    sum.x=arr[0].x+arr[1].x;
+    sum.y=arr[0].y+arr[1].y;
+    printf("\n%di + %dy is the resultant vector",sum.x,sum.y);
+return 0;
+}
