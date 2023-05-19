@@ -1,0 +1,62 @@
+/*
+1.	Draw a flowchart and also write a C program to read N real numbers into an array.
+ Design a UDF that returns the mean and the standard deviation to the calling program 
+ which then prints to the console.
+*/
+
+#include<stdio.h>
+#include<math.h>
+int Enter_array(int arr[],int size);     //function to enter array
+float Mean_of_array(int arr[],int size);  //function to find mean
+float standard_Deviation(float arr[],int size);    //function to calculate standard deviation
+int main()
+{
+    int n,i;
+    printf("Enter the size of array :  \n");
+    scanf("%d",&n);
+    int a[n];
+    Enter_array(a,n);
+    float mean=Mean_of_array(a,n);
+    printf("The mean is :  %0.2f\n",mean);
+    float deviation[n];
+    for(i=0;i<n;i++)                        //loop to do square of differnece of mean and the terms 
+    {
+        deviation[i]=pow((a[i]-mean),2);    
+    }
+    float ans=standard_Deviation(deviation,n);
+    printf("%0.3f is the ans",ans);
+return 0;
+}
+int Enter_array(int arr[],int size)
+{
+    int i;
+    printf("Enter the array :   \n");
+    for(i=0;i<size;i++)
+    {
+        printf("Index number %d :   ",i);
+        scanf("%d",&arr[i]);
+    }
+}
+float Mean_of_array(int arr[],int size)
+{
+    int i,sum=0;
+    float mean;
+    for(i=0;i<size;i++)
+    {
+        sum+=arr[i];
+    }
+    mean=sum*1.0/size;
+    return mean;
+}
+float standard_Deviation(float arr[],int size)
+{
+    int i;
+    float Standard_mean,mean,sum=0;
+    for(i=0;i<size;i++)
+    {
+        sum+=arr[i];
+    }
+    mean=sum*1.0/size;
+    Standard_mean=sqrt(mean);
+    return Standard_mean;
+} 
