@@ -1,0 +1,43 @@
+Read a binary file Data.bin present in the current path. Write a C program to print first the 
+last 100 bytes of the file followed by the first 10 bytes of the file to the screen. 
+
+
+
+
+
+//QUESTION 4;
+#include <stdio.h>
+int main() 
+{
+    FILE *file;
+    char ch[100];
+    int a;
+    file = fopen("a.bin", "rb");
+    if (file == NULL)
+	{
+        printf("Failed to open the file.\n");
+    }
+    fseek(file, 0, SEEK_END);
+    a = ftell(file);
+    fseek(file, -100, SEEK_END);
+    fread(ch, sizeof(char), 100, file);
+    printf("Last 100 bytes: \n");
+    for (int i=0;i<100;i++)
+	{
+        printf("%c", ch[i]);
+    }
+    printf("\n");
+    rewind(file);
+    fread(ch, sizeof(char), 10, file);
+    printf("First 10 bytes: \n");
+    for (int i=0;i<10;i++)
+	{
+        printf("%c", ch[i]);
+    }
+    printf("\n");
+    fclose(file);
+	return 0;
+}
+
+
+
