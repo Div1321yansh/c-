@@ -1,0 +1,46 @@
+Write an algorithm and write a C program to read a file “Sample.txt” present in the current 
+path, assuming that the file contains text of paragraphs. Count the frequency of vowels and 
+consonants present in it. Also find the size of the file and display it to the screen.
+
+
+#include<stdio.h>
+int main()
+{
+	FILE *fp;
+	char ch;
+	int size=0,v=0,c=0;
+	fp=fopen("sample.txt","w");
+	while(1)
+	{
+		ch=getchar();
+		if(ch=='`')
+		break;
+		fputc(ch,fp);
+	}
+	fclose(fp);
+	fp=fopen("sample.txt","r");
+	while(1)
+	{
+		ch=fgetc(fp);
+		if((ch>='A'&&ch<='Z')||( ch>='a'&& ch<='z'))
+		{
+		if(ch=='a'||ch=='e'||ch=='i'|| ch=='o' || ch=='u' || ch=='A' || ch=='E'|| ch=='I' || ch=='O' || ch=='U')
+			{	
+				v++;
+			}
+			else
+			{
+				c++;
+			}	
+	}
+		if(ch==EOF)
+		{
+			break;
+		}
+	}
+	size=ftell(fp);
+	printf("size of file = %d\n",size);
+	printf("vowels = %d\n",v);
+	printf("consunent = %d",c);
+	fclose(fp);
+}
