@@ -1,0 +1,22 @@
+Given a String S , print the reverse of the string as output.
+
+Example 1:
+
+Input: S = "GeeksforGeeks"
+Output: "skeeGrofskeeG" 
+Explanation: Element at first is at last and
+last is at first, second is at second last and 
+second last is at second position and so on 
+
+
+////////code-------------------------------------------------------------------------------------
+
+
+class Solution {
+  public:
+    string revStr(string S) {
+        // code here
+        reverse(S.begin(),S.end());
+        return S;
+    }
+};
