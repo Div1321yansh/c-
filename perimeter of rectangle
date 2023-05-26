@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+int l,b;
+cin>>l>>endl;
+cin>>b;
+int area=l*b;
+cout<<area;
+return 0;
+}
