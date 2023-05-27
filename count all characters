@@ -1,0 +1,59 @@
+Given a string S, write a program to count the occurrence of Lowercase characters, Uppercase characters, Special characters and Numeric values in the string.
+Note: There are no white spaces in the string.
+
+Example 1:
+
+Input:
+S = "#GeeKs01fOr@gEEks07"
+Output:
+5
+8
+4
+2
+Explanation: There are 5 uppercase characters,
+8 lowercase characters, 4 numeric characters
+and 2 special characters.
+
+Example 2:
+
+Input: 
+S = "*GeEkS4GeEkS*"
+Output:
+6
+4
+1
+2
+Explanation: There are 6 uppercase characters,
+4 lowercase characters, 1 numeric characters
+and 2 special characters.
+
+
+
+///////code------------------------------------------------------------------------------
+
+
+class Solution
+{
+    public:
+        vector <int> count (string s)
+        {
+            //code here
+            vector<int>ans;
+            int uppercount=0;
+            int lowercount=0;
+            int specialcount=0;
+            int numcount=0;
+            int i=0;
+            while(s[i]!='\0')
+            {
+                if(s[i]>='A' && s[i]<='Z')  uppercount++;
+                else if(s[i]>='a' && s[i]<='z') lowercount++;
+                else if(s[i]>='0' && s[i]<='9') numcount++;
+                else specialcount++;
+                i++;
+            }
+            ans.push_back(uppercount);
+            ans.emplace_back(lowercount);
+            ans.emplace_back(numcount);
+            ans.emplace_back(specialcount);
+            return ans;
