@@ -1,0 +1,46 @@
+Given a number N. The task is to complete the function convertFive() which replaces all zeros in the number with 5 and returns the number.
+
+Example:
+
+Input
+2
+1004
+121
+
+Output
+1554
+121
+
+Explanation:
+Testcase 1:  At index 1 and 2 there is 0 so we replace it with 5.
+Testcase 2: There is no,0 so output will remain the same.
+
+
+//////CODE-----------------------------------------------------------
+
+
+class Solution{
+  public:
+    /*you are required to complete this method*/
+    int convertFive(int n)
+    {
+    //Your code here
+    int rev=0;
+    int num=n;
+    while(num>0)
+    {
+        int digit=num%10;
+        if(digit==0) digit=5;
+        rev=rev*10+digit;
+        num/=10;
+    }
+    num=0;
+    while(rev>0)
+    {
+        int digit=rev%10;
+        num=num*10+digit;
+        rev/=10;
+    }
+    return num;
+    }
+};
