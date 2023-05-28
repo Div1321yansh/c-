@@ -1,0 +1,37 @@
+Calculate the product of all the elements in an array.
+
+Example 1:
+
+Input:
+5
+1 2 3 4 5
+Output:
+120
+ 
+
+Example 2:
+
+Input:
+10
+5 5 5 5 5 5 5 5 5 5
+Output:
+9765625
+
+
+
+/////CODE-------------------------------------------------------------------------------------
+
+
+
+class Solution{
+    public:
+    int product(int arr[], int n)
+    {
+        int fact=1;
+        for(int i=0;i<n;i++)
+        {
+            fact*=arr[i];
+        }
+        return fact;
+    }
+};
