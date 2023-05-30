@@ -1,0 +1,43 @@
+sum of series 1*1 2*2 3*3 4*4 ..............................
+
+
+
+#include<stdio.h>   //1*1 + 2*2 + 3*3 ....
+int power(int m,int n);
+int sum(int k,int n);
+int main()
+{
+    int n;
+    printf("Enter the number of terms : \n");
+    scanf("%d",&n);
+
+    printf("\n%d is the answer",sum(1,n));
+return 0;
+}
+
+int power(int n,int m)
+{
+    if(n>2)
+    {
+        return 1;
+    }
+    int pown=m;
+    int pownm1=power(n+1,m)*pown;
+    return pownm1;
+}
+
+int sum(int k,int n)
+{
+    static int sumn=0,sign=1;
+    if(k>n)
+    {
+        return 0;
+    }
+    else
+    {
+        sumn=sumn+sign*power(1,k);
+        sign=sign * -1;
+        sum(k+1,n);
+    }
+    return sumn;
+}
