@@ -1,0 +1,44 @@
+#include<stdio.h>     // correct code for upper trinagular matrix 
+int main()
+{
+    int n,i,j,count=0,N;
+    printf("enter the value of n :  \n");
+    scanf("%d",&n);
+    int a[n][n];
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(i>j)
+            {
+                if(a[i][j]==0)
+                {
+                    count++;
+                }
+            }
+        }
+    }
+
+    N=n-1;
+    if(count==N*(N+1)/2)
+    {
+        printf("/nit is a upper trinagular matrix");
+    }
+
+    else{
+        printf("\nit is not a upper triangular matrix");
+    }
+
+    
+
+return 0;
+}
