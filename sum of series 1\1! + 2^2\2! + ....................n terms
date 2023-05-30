@@ -1,0 +1,51 @@
+#include<stdio.h>    // 1!/1 + 2*2/2! + 3*3*3/3!....... n terms through recursion
+#include<math.h>
+int fact(int n);
+int power(int n,int m);
+float sumn(int j,int k);
+int main()
+{
+  int i=1,n;
+  printf("enetr the value of n : \n");
+  scanf("%d",&n);
+  printf("\n %f is the ans",sumn(1,n));
+return 0;
+}
+
+int fact(int n)
+{
+    if(n==1)
+    {
+        return 1;
+    }
+    int factn=n;
+    int factnm1=fact(n-1)*factn;
+    return factnm1;
+}
+
+int power(int n,int m)
+{
+    static int ans=1;
+    if(n>m)
+    {
+        return 1;
+    }
+    int pown=m;
+    int pownm1=power(n+1,m)*pown;
+    return pownm1;
+}
+
+float sumn(int j,int k)
+{
+    static float sum=0;
+    if(j>k)
+    {
+        return 0;
+    }
+    else
+    {
+    sum=sum+(float)(1.0*power(1,j)/fact(j));
+    sumn(j+1,k);
+    }
+    return sum;
+}
