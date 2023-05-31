@@ -1,0 +1,60 @@
+Given an array A of size N. The elements of the array consist of positive integers. You have to find the largest element with minimum frequency.
+
+Example 1:
+
+Input: 
+5
+2 2 5 50 1
+Output:
+50
+Explanation :
+All elements are having frequency 1 except 2.
+50 is the maximum element with minimum frequency.
+Example 2:
+
+Input:
+4
+3 3 5 5
+Output:
+5
+Explanation:
+Both 3 and 5 have the same frequency, so 5 should be returned.
+
+
+LINK -- https://practice.geeksforgeeks.org/problems/frequency-game/1
+/////CODE--------------------------------------------------------------------------------
+
+
+
+class Solution{
+public:
+    int LargButMinFreq(int arr[], int n) {
+        // code here
+        int max=INT_MIN;
+        int fre=INT_MAX;
+        int hassh[1000000]={0};
+        for(int i=0;i<n;i++)
+        {
+            hassh[arr[i]]++;
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(fre>hassh[arr[i]])
+            {
+                fre=hassh[arr[i]];
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(hassh[arr[i]]==fre)
+            {
+                if(max<arr[i])
+                {
+                    max=arr[i];
+                }
+            }
+        }
+        return max;
+        
+    }
+}
