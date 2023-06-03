@@ -1,0 +1,17 @@
+/*write a program to find out the square of a number through a function */
+
+#include<stdio.h>
+int square(int n);
+int main()
+{
+    int m;
+    printf("enter m : ");
+    scanf("%d",&m);
+
+    square(m);
+    return 0;
+}
+
+int square(int n){
+    printf("square is %d",n*n);
+}
