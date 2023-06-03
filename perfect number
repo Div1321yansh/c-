@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("enter number : n");
+    scanf("%d",&n);
+
+    int sum=0;
+    int FS=0;
+
+    for(int i=1;i<=n;i++){
+        for(int i=1;i<=n;i++){
+            sum=sum+i;
+        }
+        if(sum%i==0){
+            FS=FS+i;
+        }
+        else{FS=FS+i;}
+    }
+    printf("%d\n",sum);
+
+    if(sum==FS){
+        printf("no is perfect\n");
+    }
+    else{printf("no is not perfect\n");}
+
+    return 0;
+}
