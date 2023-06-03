@@ -1,0 +1,28 @@
+/*write a program to print the sum of the series 9+99+99 upto n terms*/
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+    int n;
+    printf("enter a number n : ");
+    scanf("%d", &n);
+    
+    float term=1;
+    int series1=0;
+    for(int i=10;i<=pow(10,n);i=i*i){
+        term=term*i;
+        series1=series1+i;
+    }
+    
+    int series2=0;
+    for(int j=1;j<=n;j++){
+        series2=series2+j;
+    }
+
+    float final_sum;
+    final_sum=series1-series2;
+    printf("sum of the series is %f",final_sum);
+
+    
+    return 0;
+}
