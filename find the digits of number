@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main(){
+    int n,digit;
+    printf("enter n");
+    scanf("%d",&n);
+
+    for(int i=n;i>0;i=i/10){
+        digit=i%10;
+        printf("digits are %d\t",digit);
+    }
+    return 0;
+}
+
