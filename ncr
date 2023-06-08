@@ -1,0 +1,50 @@
+Given two integers n and r, find nCr. Since the answer may be very large, calculate the answer modulo 109+7.
+
+Example 1:
+
+Input: n = 3, r = 2
+Output: 3
+Explaination: 3C2 = 3. 
+Example 2:
+
+Input: n = 2, r = 4
+Output: 0
+Explaination: r is greater than n.
+
+
+class Solution{
+public:
+    int nCr(int n, int r){
+        // code here
+        int factn=1,factr=1,factnmr=1;
+        for(int i=0;i<n;i++)
+        {
+            factn*=i;
+            if(i==(n-r))
+            {
+                factnmr=factn;
+            }
+            else if(i==r)
+            {
+                factr=factn;
+            }
+        }
+        return ((int(factn/factr)*int(1/factnmr))%1000000009);
+    }
+};
+
+//{ Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n, r;
+        cin>>n>>r;
+        
+        Solution ob;
+        cout<<ob.nCr(n, r)<<endl;
+    }
+    return 0;
+}
+// } Driver Code E
