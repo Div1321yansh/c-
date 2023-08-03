@@ -1,0 +1,56 @@
+/*
+
+0
+1 1
+2 3 5
+8 13 21
+
+print the following pattern 
+
+*/
+
+
+#include<stdio.h>
+void pattern(int rows);
+int main()
+{
+    int rows;
+    printf("Enter the number of rows : \n");
+    scanf("%d",&rows);
+    pattern(rows);
+return 0;
+}
+void pattern(int rows)
+{
+    int num1=0;
+    int num2=1;
+    int sum=num1+num2;
+    int temp,count=0;
+    for(int i=0;i<rows;i++)
+    {
+        for(int j=0;j<=i;j++)
+        {
+            if(count==0)
+            {
+                printf("%d ",num1);
+            }
+            else if(count==1)
+            {
+                printf("%d ",num2);
+            }
+            else if(count==2)
+            {
+                printf("%d ",sum);
+            }
+            else
+            {
+                num1=num2;
+                num2=sum;
+                sum=num1+num2;
+                printf("%d ",sum);
+            }
+            count++;
+        }
+        printf("\n");
+    }
+}
