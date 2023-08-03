@@ -1,0 +1,50 @@
+/*
+77777777777
+         7
+        7
+       7
+      7
+     7
+    7
+   7
+  7
+ 7
+7
+
+print the following pattern 
+*/
+
+
+#include<stdio.h>
+void seven(int rows);
+int main()
+{
+    int rows;
+    printf("ENter the number of  rows \n ");
+    scanf("%d",&rows);
+    seven(rows);
+return 0;
+}
+void seven(int rows)
+{
+    for(int i=1;i<=rows;i++)
+    {
+        printf("7");
+    }
+    printf("\n");
+    for(int i=1;i<rows;i++)
+    {
+        for(int j=1;j<=rows-i;j++)
+        {
+            if(j==rows-i)
+            {
+                printf("7");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
