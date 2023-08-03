@@ -1,0 +1,65 @@
+/*
+1
+121
+12321
+1234321
+12321
+121
+1
+
+print the following pattern 
+*/
+
+#include<stdio.h>
+void pattern(int rows);
+int main()
+{
+    int rows;
+    printf("Enter the number of rows : \n");
+    scanf("%d",&rows);
+    pattern(rows);
+return 0;
+}
+void pattern(int rows)
+{
+    int count=1;
+    for(int i=0;i<=(rows/2);i++)
+    {
+        count=1;
+        int limit=i*2 + 1;
+        for(int j=1;j<=limit;j++)
+        {
+            if(j<=(limit/2)+1)
+            {
+                printf("%d ",count);
+                if(j==limit/2 + 1) continue;
+                count++;
+            }
+            else
+            {
+                --count;
+                printf("%d ",count);
+            }
+        }
+        printf("\n");
+    }
+    count=1;
+    for(int i=rows/2;i!=0;i--)
+    {
+        for(int j=1;j<i*2;j++)
+        {
+            if(j<=i)
+            {
+                printf("%d ",count);
+                if(j==i) continue;
+                count++;
+            }
+            else
+            {
+                --count;
+                printf("%d ",count);
+            }
+        }
+        printf("\n");
+    }
+}
